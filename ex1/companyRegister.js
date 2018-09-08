@@ -1,46 +1,63 @@
+var companyCount = 0
+
 function addNewCompany() {
+	companyCount++;
 	var div = document.getElementById("job");
+
+	var fieldset = document.createElement("fieldset");
+	fieldset.setAttribute("style", "width:100%")
+
+	var legend = document.createElement("legend");
+	var legendText = document.createTextNode("Emprego "+companyCount);
+	legend.appendChild(legendText);
+	fieldset.appendChild(legend);
 
 	var node = document.createElement("input");
 	var text = document.createTextNode("Nome da empresa");
-	node.setAttribute("type", "text");	
-	div.appendChild(text);
-	div.appendChild(node);
-	linebreak = document.createElement("br");
-	div.appendChild(linebreak);
+	
+
+	node.setAttribute("type", "text");
+	node.setAttribute("sytle","padding-right: 60px")	
+	fieldset.appendChild(text);
+	fieldset.appendChild(node);
+	
+	var space = document.createElement('span');
+	space.setAttribute('style', 'width:33px; display:inline-block');	
+	fieldset.appendChild(space);
 
 	node = document.createElement("input");
 	text = document.createTextNode("País");
-	div.appendChild(text);
-	div.appendChild(node);
+	fieldset.appendChild(text);
+	fieldset.appendChild(node);
 	linebreak = document.createElement("br");
-	div.appendChild(linebreak);
+	fieldset.appendChild(linebreak);
 
 	node = document.createElement("input");
 	text = document.createTextNode("Segmento (Por exemplo, Tecnologia e Informática)");	
-	div.appendChild(text);
-	div.appendChild(node);
+	fieldset.appendChild(text);
+	fieldset.appendChild(node);
 	linebreak = document.createElement("br");
-	div.appendChild(linebreak);
+	fieldset.appendChild(linebreak);
 
 	node = document.createElement("input");
-	text = document.createTextNode("Início (Data de início do contrato de trabalho)");
-	div.appendChild(text);
-	div.appendChild(node);
-	linebreak = document.createElement("br");
-	div.appendChild(linebreak);
+	text = document.createTextNode("Início");
+	fieldset.appendChild(text);
+	fieldset.appendChild(node);
 
 	node = document.createElement("input");
-	text = document.createTextNode("Término  (Data  de  término  do  contrato  de  trabalho  ou  se  for  o  emprego  atual  o campo término pode ficar em branco)");
-	div.appendChild(text);
-	div.appendChild(node);
+	text = document.createTextNode("Término");
+	fieldset.appendChild(text);
+	fieldset.appendChild(node);
 	linebreak = document.createElement("br");
-	div.appendChild(linebreak);
+	fieldset.appendChild(linebreak);
 
 	node = document.createElement("input");
 	text = document.createTextNode("Descrição (Informação complementar das atividades desenvolvidas)");
-	div.appendChild(text);
-	div.appendChild(node);
+	node.setAttribute("style","width:540px")
+	fieldset.appendChild(text);
+	fieldset.appendChild(node);
 	linebreak = document.createElement("br");
-	div.appendChild(linebreak);	
+	fieldset.appendChild(linebreak);	
+
+	div.appendChild(fieldset);
 }

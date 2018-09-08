@@ -84,8 +84,8 @@ function montaPais(){
 				// SE O VALOR FOR BR E CONFIRMA OS SELECTS
 				$('#estado').remove();
 				$('#cidade').remove();
-				$('#campo_estado').append('<select id="estado"></select>');
-				$('#campo_cidade').append('<select id="cidade"></select>');
+				$('#campo_estado').append('<select id="estado" style="width: 130px"></select>');
+				$('#campo_cidade').append('<select id="cidade" style="width: 160px"></select>');
 
 				// CHAMA A FUNÇÃO QUE MONTA OS ESTADOS
 				montaUF('BR');		
@@ -93,8 +93,8 @@ function montaPais(){
 				// SE NÃO FOR, TROCA OS SELECTS POR INPUTS DE TEXTO
 				$('#estado').remove();
 				$('#cidade').remove();
-				$('#campo_estado').append('<input type="text" id="estado">');
-				$('#campo_cidade').append('<input type="text" id="cidade">');
+				$('#campo_estado').append('<input type="text" id="estado" style="width:128px">');
+				$('#campo_cidade').append('<input type="text" id="cidade" style="width:128px">');
 			}
 		})
 
