@@ -7,109 +7,87 @@
 		<script type="text/javascript"  src="companyRegister.js"> </script>
 		<script type="text/javascript" src="loadCountries.js"></script>
 	</head>
-
-	
 	<body>
 		<header>
 			<h1>Cadastro de Currículos</h1>
 		</header>
 		<div style="display: flex">	
-		<section style="flex: 3; flex-direction:column">
-			<form action="" method="GET">
-				<div style="display: flex; text-align: right">
-					<div  style="flex: 1" >
-						<fieldset style="height:100%">
-							<h1> Dados pessoais </h1>
-							<hr/>
-							Nome <input type="text" name="name" placeholder="Nome completo" style="width: 280px"/> <br/>  
-							Gênero 	
-							<input type="radio" name="gender" value="female" required /> Feminino 
-							<input type="radio" name="gender" value="male"/> Marculino
-							<input type="radio" name="gender" value="other"/> Outro <br/>
-							Estado Civil <select name="civilStatus" required style="width: 295px">
-								<option value="none"></option>
-								<option value="single">Solteiro</option>
-		   						<option value="married">Casado</option>
-		    					<option value="apart">Separado</option>
-		    					<option value="divorced">Divorciado</option>
-								<option value="widowed">Viúvo</option>
-							</select><br/>
-							Nacionalidade <select name="country" id="countries" required style="width: 295px"></select> <br/> 
-							Documento (CPF) <input type="text" name="document" placeholder="xxx.xxx.xxx-xx" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$" title="É necessário fornecer um CPF válido" required /> <br/>
-							Endereço <input type="text" name="address" placeholder="Rua, número, complemento" required/> <br/>
-							E-mail <input type="email" name="email" placeholder="xxxxx@xxxxx" title="É necessário fornecer um e-mail válido" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/> <br/>
-							Celular <input type="text" name="phone" placeholder="(xx)xxxxx-xxxx" required/> <br/>
-						</fieldset>
-					</div>
-					<div style="flex: 1">
-						<fieldset style="height: 100%">
-							<h1> Objetivos </h1>
-							<hr/>
-							Objetivo profissional (cargo, nível e atividade desejada) <br/>(eg, Analista de Sistemas Sênior, reponsável<br/>pela produção de software) <input type="text" name="objective" placeholder="Cargo/atividade desejada" style="width: 340px"/> <br/>
-							Região de interesse (País, cidade e estado) <br/>
-							<label>
-							    País
-							    <select id="pais" style="width: 355px"></select>
-							</label>
-							<br/>
-							<label id="campo_estado">
-							    Estado
-							    <select id="estado" style="width: 130px"></select>
-							</label>
-							
-							<label id="campo_cidade"> 
-							    Cidade
-							    <select id="cidade" style="width: 160px"></select>
-							</label> <br/>
-							<script type="text/javascript" src="countryStateCity.js"></script> 
-							Pretensão Salarial 
-							<input type="range" name="wageClaim" min="0" max="10000" value="2000" step="100" list="tickmarks" id="wageInput" oninput="wageOutput.value = wageInput.value"/>
-							<output type="text" id="wageOutput" value="">2000</output>
-						</fieldset>
-					</div>
-				</div>
-				<div style="flex: 1 ;flex-direction:column;"> 
-					<fieldset style="height: 100%; margin-top: 25px">
-					<h1> Formação acadêmica </h1>
-						<select name="education" required>
-			    			<option value=""/>
-			    			<option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
-			    			<option value="Ensino Fundamental">Ensino Fundamental</option>
-						    <option value="Ensino Medio Incompleto">Ensino Medio Incompleto</option>	
-						    <option value="Ensino Medio">Ensino Medio</option>
-						    <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
-						    <option value="Ensino Superior">Ensino Superior</option>
-						</select>
-
-						<h1> Resumo profissional </h1>
-						<h2> (Resumo de suas qualificações, habilidades e realizações profissionais) </h2>
-							<textarea name="professionalAbstract" cols="100" rows="5">
-							</textarea>
-
-						<h1> Histórico profissional </h1>
-						<div style="display: flex;  align-items:center; justify-content: space-between;">
-						<input type="button" name="addCompany" value="Adicionar emprego" onclick="addNewCompany()" /> 
-						<p >Primeiro emprego<input type="checkbox" name="noJobs" /> <p>
+			<section style="flex: 3; flex-direction:column">
+				<form action="" method="GET">
+					<div style="display: flex; text-align: right">
+						<div  style="flex: 1" >
+							<fieldset style="height:100%">
+								<h1> Dados pessoais </h1>
+								<hr/>
+								Nome <input type="text" name="name" placeholder="Nome completo" style="width: 280px" required="true" /> <br/>  
+								Gênero 	
+								<input type="radio" name="gender" value="female" required /> Feminino 
+								<input type="radio" name="gender" value="male"/> Marculino
+								<input type="radio" name="gender" value="other"/> Outro <br/>
+								Estado Civil <select name="civilStatus" required="true" style="width: 295px">
+									<option value="none" disabled></option>
+									<option value="single">Solteiro</option>
+		   							<option value="married">Casado</option>
+		    						<option value="apart">Separado</option>
+		    						<option value="divorced">Divorciado</option>
+									<option value="widowed">Viúvo</option>
+								</select><br/>
+								Nacionalidade <select name="country" id="countries" required="true" style="width: 295px"></select> <br/> 
+								Documento (CPF) <input type="text" name="document" placeholder="xxx.xxx.xxx-xx" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$" title="É necessário fornecer um CPF válido" required /> <br/>
+								Endereço <input type="text" name="address" placeholder="Rua, número, complemento" required/> <br/>
+								E-mail <input type="email" name="email" placeholder="xxxxx@xxxxx" title="É necessário fornecer um e-mail válido" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/> <br/>
+								Celular <input type="text" name="phone" placeholder="(xx)xxxxx-xxxx" required/> <br/>
+							</fieldset>
 						</div>
-						<br/>
-
-						
-						<div id="job" style="text-align: right; margin-right: 60px">
-					<!--		Nome da Empresa <input type="text" name="companyName"/ > <br/>
-							Nacionalidade <input type="text" name="companyNationality"/> <br/>
-							País <input type="text" name="companyCountry"/> <br/>
-							Segmento (Por exemplo, Tecnologia e Informática) <input type="text" name="companySegment"/> <br/>
-							Início (Data de início do contrato de trabalho) <input type="date" data-date="" data-date-format="DD-MMMM-YYYY" value="2018-09-03" name="companyStart"/> <br/>
-							<script src="date.js"></script>
-							<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-							Término  (Data  de  término  do  contrato  de  trabalho  ou  se  for  o  emprego  atual  o campo término pode ficar em branco) <input type="date" name="companyEnd"/> <br/>
-							Último cargo (Ex: Analista de Sistemas Web) <input type="text" name="companyLastOffice"/> <br/>
-							Descrição (Informação complementar das atividades desenvolvidas) <input type="text" name="companyDescription"/> <br/>
-						-->
-						
+						<div style="flex: 1">
+							<fieldset style="height: 100%">
+								<h1> Objetivos </h1>
+								<hr/>
+								Objetivo profissional (cargo, nível e atividade desejada) <br/>(eg, Analista de Sistemas Sênior, reponsável<br/>pela produção de software) <input type="text" name="objective" placeholder="Cargo/atividade desejada" style="width: 340px" required="true" /> <br/>
+								Região de interesse (País, cidade e estado) <br/>
+								<label>
+							    	País <select id="pais" style="width: 355px"></select>
+								</label>
+								<br/>
+								<label id="campo_estado">
+							    	Estado
+							    	<select id="estado" style="width: 130px"></select>
+								</label>
+								<label id="campo_cidade"> 
+							    	Cidade
+							    	<select id="cidade" style="width: 160px"></select>
+								</label> <br/>
+								<script type="text/javascript" src="countryStateCity.js"></script> 
+								Pretensão Salarial 
+								<input type="range" name="wageClaim" min="0" max="10000" value="2000" step="100" list="tickmarks" id="wageInput" oninput="wageOutput.value = wageInput.value"/>
+								<output type="text" id="wageOutput" value="">2000</output>
+							</fieldset>
+						</div>
 					</div>
-						<input type="button" name="send" value="Enviar"/>
-					</fieldset>
+					<div style="flex: 1 ;flex-direction:column;"> 
+						<fieldset style="height: 100%; margin-top: 25px">
+							<h1> Formação acadêmica </h1>
+							<select name="education" required>
+			    				<option value=""/>
+			    				<option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
+			    				<option value="Ensino Fundamental">Ensino Fundamental</option>
+						    	<option value="Ensino Medio Incompleto">Ensino Medio Incompleto</option>	
+						    	<option value="Ensino Medio">Ensino Medio</option>
+						    	<option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+						    	<option value="Ensino Superior">Ensino Superior</option>
+							</select>
+							<h1> Resumo profissional </h1>
+							<h2> (Resumo de suas qualificações, habilidades e realizações profissionais) </h2>
+							<textarea name="professionalAbstract" cols="100" rows="5"></textarea>
+							<h1> Histórico profissional </h1>
+							<div style="display: flex;  align-items:center; justify-content: space-between;">
+								<input type="button" name="addCompany" value="Adicionar emprego" onclick="addNewCompany()" id="addCompBut" /> 
+								<p >Primeiro emprego<input type="checkbox" name="noJobs" onclick="firstJob()" id="fjob" required="true" /> 
+							</div>
+							<br/>
+							<div id="job" style="text-align: right; margin-right: 60px" ></div>
+								<input type="submit" name="send" value="Enviar"/>
+						</fieldset>
 					</div>
 				</form>
 			</section>

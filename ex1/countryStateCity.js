@@ -24,8 +24,8 @@ function montaCidade(estado, pais){
 
 function montaUF(pais){
 	$.ajax({
-		type:'GET',
-		url:'http://api.londrinaweb.com.br/PUC/Estados/'+pais+'/0/10000',
+		type: "GET",
+		url: "http://api.londrinaweb.com.br/PUC/Estados/"+pais+"/0/10000",
 		contentType: "application/json; charset=utf-8",
 		dataType: "jsonp",
 		async:false
@@ -53,8 +53,8 @@ function montaUF(pais){
 
 function montaPais(){
 	$.ajax({
-		type:	'GET',
-		url:	'http://api.londrinaweb.com.br/PUC/Paisesv2/0/1000',
+		type:	"GET",
+		url:	"http://api.londrinaweb.com.br/PUC/Paisesv2/0/1000",
 		contentType: "application/json; charset=utf-8",
 		dataType: "jsonp",
 		async:false
@@ -62,21 +62,20 @@ function montaPais(){
 		
 		paises='';
 
+		paises+='<option value=""></option>';
+		
 		$.each(response, function(p, pais){
-
-			if(pais.Pais == 'Brasil'){
-				paises+='<option value="'+pais.Sigla+'" selected>'+pais.Pais+'</option>';
-			} else {
 				paises+='<option value="'+pais.Sigla+'">'+pais.Pais+'</option>';
-			}
-
 		});
+
+
 
 		// PREENCHE O SELECT DE PAÍSES
 		$('#pais').html(paises);
 
 		// PREENCHE O SELECT DE ACORDO COM O VALOR DO PAÍS
-		montaUF($('#pais').val());
+		if($('#pais').val() != "")
+			montaUF($('#pais').val());
 
 		// VERIFICA A MUDANÇA DO VALOR DO SELECT DE PAÍS
 		$('#pais').change(function(){
