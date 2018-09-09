@@ -52,6 +52,7 @@ function addNewCompany() {
 	node = document.createElement("input");
 	text = document.createTextNode("Início");
 	node.setAttribute("required", "true")
+	node.setAttribute('style', 'width:230px;');
 	node.setAttribute("type", "date");
 	
 	fieldset.appendChild(text);
