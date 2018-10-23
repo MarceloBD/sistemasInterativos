@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+	<head>
+		<meta charset = "UTF-8">
+		<title> Cadastro de currículos </title>
+		<link rel="stylesheet" href="https://bootflat.github.io/bootflat/css/bootflat.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript"  src="companyRegister.js"> </script>
+		<script type="text/javascript" src="loadCountries.js"></script>
+		<link rel="stylesheet" type="text/css" href = "style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		
+	</head>
+	<body>
+		<header id="title">
+			<h1>Cadastro de Currículos</h1>
+		</header>
+		<div id="outdiv" class="container-fluid">	
+			<section id="main_content" >
+				<form action="" method="GET" class="simple-form">
+					<div id="top_block">
+						<div  class="flex_1" >
+							<fieldset class="full">
+								<h1> Dados pessoais </h1>
+								<hr/>	
+
+							
+								Nome <input type="text" name="name" placeholder="Nome completo" id="name_input" required="true"  /> <br/>  
+							
+									<div>
+								Gênero 	
+
+								<input type="radio" name="gender" value="female" required style="margin-left: -40px; margin-right: -40px" /> Feminino 
+								<input type="radio" name="gender" value="male" style="margin-left: -40px;  margin-right: -40px" /> Masculino
+								<input type="radio" name="gender" value="other" style="margin-left: -40px;  margin-right: -40px" /> Outro <br/>
+								
+								</div>
+
+		
+								Estado Civil <select name="civilStatus" required="true" id="civil_status_select">
+									<option value="" ></option>
+									<option value="single">Solteiro</option>
+		   							<option value="married">Casado</option>
+		    						<option value="apart">Separado</option>
+		    						<option value="divorced">Divorciado</option>
+									<option value="widowed">Viúvo</option>
+								</select><br/>
+								Nacionalidade <select name="country" id="countries" required="true" id="nationality_select"></select> <br/> 
+								Documento (CPF) <input type="text" name="document" placeholder="xxx.xxx.xxx-xx" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$" title="É necessário fornecer um CPF válido" required class="register_inputs"/> <br/>
+								Endereço <input type="text" name="address" placeholder="Rua, número, complemento" required class="register_inputs"/> <br/>
+								E-mail <input type="email" name="email" placeholder="xxxxx@xxxxx" title="É necessário fornecer um e-mail válido" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required class="register_inputs"/> <br/>
+								Celular <input type="text" name="phone" placeholder="(xx)xxxxx-xxxx" required class="register_inputs"/> <br/>
+							</fieldset>
+						</div>
+						<div class="flex_1">
+							<fieldset class="full">
+								<h1> Objetivos </h1>
+								<hr/>
+								Objetivo profissional (cargo, nível e atividade desejada) <br/>(eg, Analista de Sistemas Sênior, reponsável pela <br/> produção de software) <input type="text" name="objective" placeholder="Cargo/atividade desejada" id="professional_objective_input" required="true" /> <br/>
+								Região de interesse (País, cidade e estado) <br/>
+								<label>
+							    	País <select id="pais" ></select>
+								</label>
+								<br/>
+								<label id="campo_estado">
+							    	Estado
+							    	<select id="estado" ></select>
+								</label>
+								<label id="campo_cidade"> 
+							    	Cidade
+							    	<select id="cidade" ></select>
+								</label> <br/>
+								<script type="text/javascript" src="countryStateCity.js"></script> 
+								Pretensão Salarial 
+							
+								<div id="wageDiv">
+									
+									<div id="waveDiv0"></div>
+									<div id="waveDiv1">
+									
+									<input type="range" name="wageClaim" min="0" max="10000" value="2000" step="100" list="tickmarks" id="wageInput" oninput="wageOutput.value = wageInput.value"/>
+									</div>
+									<div id="waveDiv2">
+									<output type="text" id="wageOutput" value="">2000</output>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<div class="flex_1" id="bot_block"> 
+						<fieldset class="full" id="bot_fieldset">
+							<h1> Formação acadêmica </h1>
+							<select name="education"  id="education" required>
+			    				<option value=""/>
+			    				<option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
+			    				<option value="Ensino Fundamental">Ensino Fundamental</option>
+						    	<option value="Ensino Medio Incompleto">Ensino Medio Incompleto</option>	
+						    	<option value="Ensino Medio">Ensino Medio</option>
+						    	<option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+						    	<option value="Ensino Superior">Ensino Superior</option>
+							</select>
+							<h1> Resumo profissional </h1>
+							<h2> (Resumo de suas qualificações, habilidades e realizações profissionais) </h2>
+							<textarea name="professionalAbstract" cols="93" rows="5"></textarea>
+							<h1> Histórico profissional </h1>
+							<div id="add_company_div" >
+								<input type="button" name="addCompany" value="Adicionar emprego" onclick="addNewCompany()" id="addCompBut" class="btn btn-success green"/> 
+								<p >Primeiro emprego<input type="checkbox" name="noJobs" onclick="firstJob()" id="fjob" required="true" /> 
+							</div>
+							<br/>
+							<div id="job" ></div>
+								<input type="submit" name="send" value="Enviar" class="btn btn-success green"/>
+						</fieldset>
+					</div>
+				</form>
+			</section>
+		<aside id="aside_content">	
+		</aside>
+	</div>
+	</body>
+</html>
