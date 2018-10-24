@@ -15,7 +15,12 @@
 	</head>
 	<body>
 		<header id="title">
-			<h1>Cadastro de Currículos</h1>
+			<div class="flex">
+				<div class="flex1">
+					<h1 class="green-border h1-title" >Cadastro de Currículos</h1>
+				</div>
+				<div class="flex1"></div>
+			</div>
 		</header>
 		<div id="outdiv" class="container-fluid">	
 			<section id="main_content" >
@@ -23,7 +28,7 @@
 					<div id="top_block">
 						<div  class="flex_1" >
 							<fieldset class="full">
-								<h1> Dados pessoais </h1>
+								<h1 class="bot-border"> Dados pessoais </h1>
 								<hr/>	
 
 							
@@ -54,9 +59,10 @@
 								Celular <input type="text" name="phone" placeholder="(xx)xxxxx-xxxx" required class="register_inputs"/> <br/>
 							</fieldset>
 						</div>
+						<div class="left-border"></div>
 						<div class="flex_1">
 							<fieldset class="full">
-								<h1> Objetivos </h1>
+								<h1 class="bot-border" id="objectives"> Objetivos </h1>
 								<hr/>
 								Objetivo profissional (cargo, nível e atividade desejada) <br/>(eg, Analista de Sistemas Sênior, reponsável pela <br/> produção de software) <input type="text" name="objective" placeholder="Cargo/atividade desejada" id="professional_objective_input" required="true" /> <br/>
 								Região de interesse (País, cidade e estado) <br/>
@@ -91,7 +97,7 @@
 					</div>
 					<div class="flex_1" id="bot_block"> 
 						<fieldset class="full" id="bot_fieldset">
-							<h1> Formação acadêmica </h1>
+							<h1 class="bot-border" id="academic-formation"> Formação acadêmica </h1>
 							<select name="education"  id="education" required>
 			    				<option value=""/>
 			    				<option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
@@ -101,10 +107,10 @@
 						    	<option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
 						    	<option value="Ensino Superior">Ensino Superior</option>
 							</select>
-							<h1> Resumo profissional </h1>
+							<h1 class="bot-border" id="profissional-abstract"> Resumo profissional </h1>
 							<h2> (Resumo de suas qualificações, habilidades e realizações profissionais) </h2>
 							<textarea name="professionalAbstract" cols="93" rows="5"></textarea>
-							<h1> Histórico profissional </h1>
+							<h1 class="bot-border" id="profissional-abstract"> Histórico profissional </h1>
 							<div id="add_company_div" >
 								<input type="button" name="addCompany" value="Adicionar emprego" onclick="addNewCompany()" id="addCompBut" class="btn btn-success green"/> 
 								<p >Primeiro emprego<input type="checkbox" name="noJobs" onclick="firstJob()" id="fjob" required="true" /> 

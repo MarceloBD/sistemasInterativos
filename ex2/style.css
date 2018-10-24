@@ -175,6 +175,53 @@ body{
 	background-color: #eeffe6
 }
 
-h1{
-	border-left-width: 1px
+.green-border{
+	border-style:solid;
+	border-color:#287EC7;
 }
+
+.flex{
+	display: flex;	
+}
+
+.flex1{
+	flex: 1
+}
+
+.h1-title{
+	box-sizing: border-box;
+    width: 80%;
+    border: 1px solid #B1F39D;
+    border-radius: 25px;
+    float: left;
+    padding: 5px
+}
+
+.bot-border{
+	border-bottom: 2px solid #B1F39D;
+	margin-left: 100px
+}
+
+#objectives{
+	margin-left: 200px
+}
+
+#academic-formation{
+	margin-left: 0px;
+	margin-right: 400px;
+}
+
+#profissional-abstract{
+	margin-left: 0px;
+	margin-right: 400px;
+}
+
+.left-border{
+	border-left: 2px solid #B1F39D;
+	margin-left: 10px;
+	margin-right: -10px;
+	height: 250px;
+	margin-top: 90px;
+}
+
+
