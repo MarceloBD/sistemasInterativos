@@ -5,10 +5,11 @@
 		<title> Cadastro de currículos </title>
 		<link rel="stylesheet" href="https://bootflat.github.io/bootflat/css/bootflat.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript"  src="companyRegister.js"> </script>
 		<script type="text/javascript" src="loadCountries.js"></script>
+		<script type="text/javascript" src="submit.js"></script>
 		<link rel="stylesheet" type="text/css" href = "style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
   		
@@ -24,7 +25,7 @@
 		</header>
 		<div id="outdiv" class="container-fluid">	
 			<section id="main_content" >
-				<form action="" method="GET" class="simple-form">
+				<form action="" method="GET" class="simple-form" >
 					<div id="top_block">
 						<div  class="flex_1" >
 							<fieldset class="full">
@@ -107,17 +108,17 @@
 						    	<option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
 						    	<option value="Ensino Superior">Ensino Superior</option>
 							</select>
-							<h1 class="bot-border" id="profissional-abstract"> Resumo profissional </h1>
+							<h1 class="bot-border" id="professional-abstract"> Resumo profissional </h1>
 							<h2> (Resumo de suas qualificações, habilidades e realizações profissionais) </h2>
 							<textarea name="professionalAbstract" cols="93" rows="5"></textarea>
-							<h1 class="bot-border" id="profissional-abstract"> Histórico profissional </h1>
+							<h1 class="bot-border" id="professional-abstract"> Histórico profissional </h1>
 							<div id="add_company_div" >
-								<input type="button" name="addCompany" value="Adicionar emprego" onclick="addNewCompany()" id="addCompBut" class="btn btn-success green"/> 
-								<p >Primeiro emprego<input type="checkbox" name="noJobs" onclick="firstJob()" id="fjob" required="true" /> 
+								<input type="button" name="addCompany" value="Adicionar emprego"  id="addCompBut" class="btn btn-success green" onclick="addNewCompany()" /> 
+								<p >Primeiro emprego<input type="checkbox" name="noJobs" onclick="firstJob()" id="fjob" required="true" class="fjob" /> 
 							</div>
 							<br/>
 							<div id="job" ></div>
-								<input type="submit" name="send" value="Enviar" class="btn btn-success green"/>
+								<input type="submit" name="send" value="Enviar" class="btn btn-success green" onclick="formToJson()" />
 						</fieldset>
 					</div>
 				</form>

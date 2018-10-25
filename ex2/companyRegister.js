@@ -11,8 +11,8 @@ function addNewCompany() {
 	companyCount++;
 	var div = document.getElementById("job");
 
-	var fieldset = document.createElement("fieldset");
-	fieldset.setAttribute("style", "width:100%")
+	var fieldset = document.createElement("fieldset");;
+	fieldset.setAttribute("style", "width:100%");
 
 	var legend = document.createElement("legend");
 	var legendText = document.createTextNode("Emprego "+companyCount);
@@ -26,7 +26,8 @@ function addNewCompany() {
 	node.setAttribute("type", "text");
 	node.setAttribute("sytle","padding-right: 60px")
 	node.setAttribute('style', 'width:220px;');	
-	node.setAttribute("required", "true")
+	node.setAttribute("required", "true");
+	node.setAttribute("name", "company_name");
 	fieldset.appendChild(text);
 	fieldset.appendChild(node);
 	
@@ -38,6 +39,7 @@ function addNewCompany() {
 	text = document.createTextNode("País");
 	node.setAttribute("required", "true")
 	node.setAttribute('style', 'width:230px;');
+		node.setAttribute("name", "company_country");
 	fieldset.appendChild(text);
 	fieldset.appendChild(node);
 	linebreak = document.createElement("br");
@@ -47,6 +49,7 @@ function addNewCompany() {
 	text = document.createTextNode("Segmento (Por exemplo, Tecnologia e Informática)");	
 	node.setAttribute("required", "true")
 	node.setAttribute('style', 'width:230px;');
+		node.setAttribute("name", "area")
 	fieldset.appendChild(text);
 	fieldset.appendChild(node);
 	linebreak = document.createElement("br");
@@ -57,6 +60,7 @@ function addNewCompany() {
 	node.setAttribute("required", "true")
 	node.setAttribute('style', 'width:230px;');
 	node.setAttribute("type", "date");
+		node.setAttribute("name", "start");
 	
 	fieldset.appendChild(text);
 	fieldset.appendChild(node);
@@ -68,13 +72,15 @@ function addNewCompany() {
 	fieldset.appendChild(node);
 	node.setAttribute('style', 'width:230px;');
 	node.setAttribute("type", "date");
+		node.setAttribute("name", "end");
 	linebreak = document.createElement("br");
 	fieldset.appendChild(linebreak);
 
 	node = document.createElement("input");
 	text = document.createTextNode("Descrição (Informação complementar das atividades desenvolvidas)");
-	node.setAttribute("style","width:519px")
-	node.setAttribute("required", "true")
+	node.setAttribute("style","width:519px");
+	node.setAttribute("required", "true");
+		node.setAttribute("name", "description");
 	fieldset.appendChild(text);
 	fieldset.appendChild(node);
 	linebreak = document.createElement("br");
