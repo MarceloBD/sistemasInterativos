@@ -223,3 +223,9 @@ body{
 	height: 250px;
 	margin-top: 90px;
 }
+
+textarea {
+  resize: none;
+}
+
+

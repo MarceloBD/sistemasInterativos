@@ -1,3 +1,5 @@
+
+
 function formToJson(){
 	name = document.getElementsByName('name')[0].value;
 	gender = document.querySelector('input[name="gender"]:checked').value;
