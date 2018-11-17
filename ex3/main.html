@@ -99,6 +99,10 @@
 					</div>
 					<div id="next_page_div" >
 								<input type="button" name="nextPage" value="Próxima"  id="nextPage" class="btn btn-success green" onclick="" /> 
+								<div id="app">
+								<router-link to="/page2" > <i> Navigate to Page2 </i>   </router-link> 
+								<router-view :key="$route.fullPath"></router-view>
+								</div>
 					</div>
 				</form>
 			</section>
@@ -106,4 +110,8 @@
 		</aside>
 	</div>
 	</body>
+	<script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+	<script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+	
+		<script type="module" src="vue.js"></script>	
 </html>
