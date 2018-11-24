@@ -5,11 +5,11 @@ var Page1 = Vue.component('Page1', {
             }
         },
   template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>' 
-})
+});
 
 var Page2 = Vue.component('Page2', {
   template: '<p>You clicked me</p>'
-})
+});
 
 const router =  new VueRouter({
     routes: [
@@ -31,7 +31,7 @@ const router =  new VueRouter({
             component: Page2
         }
     ]
-})
+});
 
 
 Vue.use(VueRouter)
@@ -39,7 +39,7 @@ const app = new Vue({
     el:'#app',
     router
  
-})
+});
 
 
 

@@ -31,12 +31,27 @@
 							<textarea name="professionalAbstract" cols="93" rows="5"></textarea>
 							<h1 class="bot-border" id="professional-abstract"> Histórico profissional </h1>
 							<div id="add_company_div" >
-								<input type="button" name="addCompany" value="Adicionar emprego"  id="addCompBut" class="btn btn-success green" onclick="addNewCompany()" /> 
-								<p >Primeiro emprego<input type="checkbox" name="noJobs" onclick="firstJob()" id="fjob" required="true" class="fjob" /> 
+								<!--<input type="button" name="addCompany" value="Adicionar emprego"  id="addCompBut" class="btn btn-success green" onclick="addNewCompany()" /> -->
+								<div class="flex1">
+								<p>Primeiro emprego<input type="checkbox" name="noJobs" onclick="firstJob()" id="fjob" required="true" class="fjob" /> </p>
+								<div id="addC">
+									
+									<input type="button" name="addCompany" value="Adicionar emprego"  id="addCompBut" class="btn btn-success green"  v-on:click="add"/> 
+									
+									<ol style="list-style-type: none;">
+									<li v-for="i in number">
+										<Company></Company>
+									</li>
+									</ol>
+								</div>
+								</div>
 							</div>
 							<br/>
 							<div id="job" ></div>
 								<input type="submit" name="send" value="Enviar" class="btn btn-success green" onclick="formToJson()" />
+								
 						</fieldset>
 					</div>
+					<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+					<script type="module" src="add.js"></script>
 </html>
