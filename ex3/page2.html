@@ -39,8 +39,8 @@
 									<input type="button" name="addCompany" value="Adicionar emprego"  id="addCompBut" class="btn btn-success green"  v-on:click="add"/> 
 									
 									<ol style="list-style-type: none;">
-									<li v-for="i in number">
-										<Company></Company>
+									<li v-for="i in number" >
+										<Company :i="i"></Company>
 									</li>
 									</ol>
 								</div>
