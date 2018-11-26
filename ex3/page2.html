@@ -11,6 +11,12 @@
 		<script type="text/javascript" src="loadCountries.js"></script>
 		<script type="text/javascript" src="submit.js"></script>
 		<script src="dynamics.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.4/vue.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.css">
+
 		<link rel="stylesheet" type="text/css" href = "style.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
@@ -43,15 +49,17 @@
 					<div class="flex_1" id="bot_block"> 
 						<fieldset class="full" id="bot_fieldset">
 							<h1 class="bot-border" id="academic-formation"> Formação acadêmica </h1>
-							<select name="education"  id="education" required>
-			    				<option value=""/>
-			    				<option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
-			    				<option value="Ensino Fundamental">Ensino Fundamental</option>
-						    	<option value="Ensino Medio Incompleto">Ensino Medio Incompleto</option>	
-						    	<option value="Ensino Medio">Ensino Medio</option>
-						    	<option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
-						    	<option value="Ensino Superior">Ensino Superior</option>
-							</select>
+							<!--<select name="education"  id="education" required>-->
+							<select id="supplier_id" class='form-control' v-model='supplier_id' v-select='supplier_id' name="education"  id="education" style="width: 300px">
+			    				 <option disabled value=""></option>
+							<option value="1">Ensino Fundamental Incompleto</option>
+			    				<option value="2">Ensino Fundamental</option>
+						    	<option value="3">Ensino Medio Incompleto</option>	
+						    	<option value="4">Ensino Medio</option>
+						    	<option value="5">Ensino Superior Incompleto</option>
+						    	<option value="6">Ensino Superior</option>
+							 </select>
+							<!--</select>-->
 							<h1 class="bot-border" id="professional-abstract"> Resumo profissional </h1>
 							<h2> (Resumo de suas qualificações, habilidades e realizações profissionais) </h2>
 							<textarea name="professionalAbstract" cols="93" rows="5"></textarea>
@@ -82,8 +90,13 @@
 
 				</template>
 			</draggable-header-view>
+
 		</div>
 </body>
+
+
+							
+						
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 					<script type="module" src="add.js"></script>
 </html>

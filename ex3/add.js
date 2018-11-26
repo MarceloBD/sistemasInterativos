@@ -66,9 +66,26 @@ Vue.component('draggable-header-view', {
   }
 })
 
+
+Vue.directive('select', {
+  twoWay: true,
+  bind: function (el, binding, vnode) {
+    $(el).select2().on("select2:select", (e) => {
+      // v-model looks for
+      //  - an event named "change"
+      //  - a value with property path "$event.target.value"
+      el.dispatchEvent(new Event('change', { target: e.target }));
+    });
+  },
+});
+
+
+
 new Vue({ el: '#animatedTitle',
 	data:{number: 0,
-		height:800},
+		height:800,
+		supplier_id: "niklesh"
+		},
 	computed: {
     computedHeight: function () {
       return this.height+"px";
@@ -78,5 +95,11 @@ methods:{add:function(){
 		this.number += 1;
 		console.log(this.number)
 		this.height += 170;
-	} }})
+	} }
+})
+
+$('#supplier_id').select2({});
+
+
+
 
