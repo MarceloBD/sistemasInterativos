@@ -1,14 +1,10 @@
 var Page1 = Vue.component('Page1', {
-  data () {
-            return {
-                msg: 'Hey Nic Raboy'
-            }
-        },
-  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>' 
+  template: '#proxBut'
+  
 });
 
 var Page2 = Vue.component('Page2', {
-  template: '<p>You clicked me</p>'
+  template: '#sureBut'
 });
 
 const router =  new VueRouter({
@@ -33,16 +29,7 @@ const router =  new VueRouter({
     ]
 });
 
-
-//Vue.use(VueRouter)
-//const app = new Vue({
- //   el:'#app',
- //   router
- 
-//});
-
-
-
+Vue.use(VueRouter)
 
 Vue.component('draggable-header-view', {
   template: '#header-view-template',
@@ -102,5 +89,6 @@ Vue.component('draggable-header-view', {
   }
 })
 
-new Vue({ el: '#animatedTitle' })
+new Vue({ el: '#animatedTitle',
+    router})
 

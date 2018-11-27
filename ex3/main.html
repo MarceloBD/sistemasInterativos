@@ -129,7 +129,7 @@
 					</div>
 					<div id="next_page_div" >
 								<!--<input type="button" name="nextPage" value="Próxima"  id="nextPage" class="btn btn-success green" onclick=""  /> -->
-								<a href="page2.html" class="btn btn-success green">Próxima</a> 
+								<router-view :key="$route.fullPath"></router-view>
 
 								
 					</div>
@@ -141,7 +141,24 @@
 
     </template>
   </draggable-header-view>
+</div>
+
+
 	</body>
+
+	<script type="text/x-template" id="proxBut">
+		<div>
+								
+								<router-link to="/page2" > <button class="btn btn-success green" >Próximo</button>   </router-link> 
+							</div>
+								</script>
+								<script type="text/x-template" id="sureBut">
+									<div>
+										<p>Deseja realmente prosseguir?</p>
+ 								<a href="page2.html" class="btn btn-success green">Sim</a>
+								</div>
+								</script>
+
 	<script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
 	<script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
 	
