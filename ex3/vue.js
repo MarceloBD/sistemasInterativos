@@ -90,5 +90,10 @@ Vue.component('draggable-header-view', {
 })
 
 new Vue({ el: '#animatedTitle',
-    router})
+    router,
+    mounted : function() {
+        let recaptchaScript = document.createElement('script')
+        recaptchaScript.setAttribute('src', 'https://www.google.com/recaptcha/api.js')
+        this.$refs["countryScript"].appendChild(recaptchaScript)
+}})
 
